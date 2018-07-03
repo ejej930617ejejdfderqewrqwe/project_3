@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+  
+  <configuration>
+	<typeAliases>
+		<typeAlias type="kr.co.soldesk.domain.UserInfoDTO" alias="userDTO"/>	
+		<typeAlias type="kr.co.soldesk.domain.BoardDTO" alias="boardDTO"/>
+		<typeAlias type="kr.co.soldesk.domain.TeamInfoDTO" alias="teamInfoDTO"/>
+		<typeAlias type="kr.co.soldesk.domain.StadiumDTO" alias="stadiumDTO"/>	
+		<typeAlias type="kr.co.soldesk.domain.TeamRegDTO" alias="teamRegDTO"/>
+		<typeAlias type="kr.co.soldesk.domain.MatchRegDTO" alias="matchRegDTO"/>
+	</typeAliases>
+	
+	<mappers>
+		<mapper resource="kr/co/soldesk/resource/Mapper.xml"  />
+	
+	</mappers>
+	
+	
+</configuration>  
+  
+  

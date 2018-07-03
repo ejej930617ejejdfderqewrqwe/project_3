@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace=" ">
+
+	<!--==================== userInfo=======================  -->
+	
+	<select id="selectAllUserInfo" resultType="userDTO" >
+		select * from user_info
+	</select>
+	
+	<select id="selectOneUserInfo" parameterType="int" resultType="userDTO">
+		select * from user_info
+		where user_num = #{user_num}
+	</select>
+	
+	<select id="selectOneUserInfoById" parameterType="String" resultType="userDTO">
+		select * from user_info
+		where user_id = #{user_id}
+	</select>
+	
+	<insert id="insertOneUserInfo" parameterType="userDTO" >
+		insert into user_info
+		values (user_num_seq.nextval,#{user_id},#{user_pw},#{user_name},#{user_nickname},
+		#{user_grade},#{user_phone},#{user_birth},#{user_loc},#{user_prof},sysdate)
+	</insert>
+	
+	
+	<update id="updateUserInfo" parameterType="userDTO">
+		update user_info
+		set user_nickname = #{user_nickname}, user_pw = #{user_pw}
+		where user_num = #{user_num}
+	</update>
+	
+	<delete id="deleteUserInfo" parameterType="int">
+		delete user_info
+		where user_num = #{user_num}
+	</delete>
+	
+	
+	
+	
+	<!--=============== Board======================= -->
+	
+	<select id="selectAllBoard" resultType="boardDTO" >
+		select * from board
+	</select>
+	
+	<!-- 게시글 디테일 -->
+	<select id="selectOneBoard" parameterType="int" resultType="boardDTO">
+		select * from board
+		where board_num = #{board_num}
+	</select>
+	
+	<!--  종목별, 카테고리별로 리스트 뽑기 -->
+	<select id="selectBoardByCate" parameterType="boardDTO" resultType="boardDTO">
+		select * from board
+		where board_event = #{board_event} and board_category = #{board_category}
+	</select>
+	
+	<!-- 내가 쓴 글 보기 -->
+	
+	<select id="selectAllMyBoard" parameterType="int"  resultType="boardDTO">
+		select * from board where user_num = #{user_num}
+	</select>
+	
+	
+	
+	<insert id="insertOneBoard" parameterType="boardDTO" >
+		insert into board
+		values (#{board_event},#{board_category},#{board_title},#{board_writer},#{board_contents},
+		'img', 0, 0, 0,1,board_num_seq.nextval,sysdate)
+	</insert>
+	
+	<update id="updateBoard" parameterType="boardDTO">
+		update board
+		set board_title = #{board_title}, board_contents = #{board_contents}
+		where board_num = #{board_num}
+	</update>
+	
+	<delete id="deleteBoard" parameterType="int">
+		delete board
+		where board_num = #{board_num}
+	</delete>
+	
+	
+	
+
+	<!-- ================TEAM INFO ========================= -->
+
+	<select id="selectAllTeamInfo" resultType="teamInfoDTO" >
+		select * from team_info
+	</select>
+	
+	<select id="selectOneTeamInfo" parameterType="int" resultType="teamInfoDTO">
+		select * from team_info
+		where team_num = #{team_num}
+	</select>
+	
+	
+	<select id="selectMyTeamInfo" parameterType="int" resultType="teamInfoDTO">	
+	select * from team_info
+	where team_num in (select team_num from team_reg
+	where user_num = #{user_num})
+	</select>
+	
+	<insert id="insertOneTeamInfo" parameterType="teamInfoDTO" >
+		insert into team_info
+		values (team_num_seq.nextval,#{team_name},#{team_location},#{team_event},0,'0전 0승0무0패', 0)
+	</insert>
+	
+	<update id="updateTeamInfo" parameterType="teamInfoDTO">
+		update team_info
+		set team_name = #{team_name}, team_location = #{team_location}
+		where team_num = #{team_num}
+	</update>
+	
+	<delete id="deleteTeamInfo" parameterType="int">
+		delete team_info
+		where team_num = #{team_num}
+	</delete>
+	
+	
+	
+	<!-- =============STADIUM================== -->
+	
+	<select id="selectAllStadium" resultType="stadiumDTO" >
+		select * from stadium
+	</select>
+	
+	<select id="selectOneStadium" parameterType="int" resultType="stadiumDTO">
+		select * from stadium
+		where stadium_num = #{stadium_num}
+	</select>
+	
+	
+	
+	<!-- ===============TEAM REG====================== -->
+	
+	<insert id="insertTeamReg" parameterType="teamRegDTO">
+		insert into team_reg
+		values (team_reg_seq.nextval,#{user_num},#{team_num},#{teamreg_event},#{teamreg_position})	
+	</insert>
+	
+	
+	<!-- ===============MATCH REG===================== -->
+	<insert id="insertMatchReg" parameterType="matchRegDTO">
+		insert into match_reg
+		values (matchreg_num_seq.nextval, #{user_num}, #{stadium_num}, #{matchreg_event}, #{matchreg_date}, #{matchreg_time}, 0)
+	</insert>
+	
+	
+</mapper>
