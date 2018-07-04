@@ -11,6 +11,7 @@
 		<typeAlias type="kr.co.soldesk.domain.StadiumDTO" alias="stadiumDTO"/>	
 		<typeAlias type="kr.co.soldesk.domain.TeamRegDTO" alias="teamRegDTO"/>
 		<typeAlias type="kr.co.soldesk.domain.MatchRegDTO" alias="matchRegDTO"/>
+		<typeAlias type="kr.co.soldesk.domain.MatchInfoDTO" alias="matchInfoDTO"/>
 	</typeAliases>
 	
 	<mappers>

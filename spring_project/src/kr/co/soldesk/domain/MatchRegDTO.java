@@ -4,7 +4,7 @@ public class MatchRegDTO {
 	private int matchreg_num;
 	private int user_num;
 	private int stadium_num;
-	private String matchreg_event;
+	private int matchreg_event;
 	private String matchreg_date;
 	private String matchreg_time;
 	private int matchreg_status;
@@ -13,7 +13,7 @@ public class MatchRegDTO {
 		
 	}
 
-	public MatchRegDTO(int matchreg_num, int user_num, int stadium_num, String matchreg_event, String matchreg_date,
+	public MatchRegDTO(int matchreg_num, int user_num, int stadium_num, int matchreg_event, String matchreg_date,
 			String matchreg_time, int matchreg_status) {
 		super();
 		this.matchreg_num = matchreg_num;
@@ -49,11 +49,11 @@ public class MatchRegDTO {
 		this.stadium_num = stadium_num;
 	}
 
-	public String getMatchreg_event() {
+	public int getMatchreg_event() {
 		return matchreg_event;
 	}
 
-	public void setMatchreg_event(String matchreg_event) {
+	public void setMatchreg_event(int matchreg_event) {
 		this.matchreg_event = matchreg_event;
 	}
 

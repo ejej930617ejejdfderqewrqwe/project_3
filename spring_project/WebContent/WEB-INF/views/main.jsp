@@ -40,20 +40,20 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#about">마이페이지</a>
-            </li>
+            </li> -->
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#match.do">매치보드</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#portfolio">팀</a>
+              <a class="nav-link js-scroll-trigger" href="#about">홈</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">커뮤니티</a>
+             <a class="nav-link js-scroll-trigger" href="#services">로그인</a>
             </li>
              <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#services">경기장</a>
+              <a class="nav-link js-scroll-trigger" href="insert">회원가입</a>
             </li>
           </ul>
         </div>
@@ -103,7 +103,7 @@
         <div class="row">
           <div class="col-lg-3 col-md-6 text-center">
             <div class="service-box mt-5 mx-auto">
-              <a href="soccerMain?board_event=soccer"><i class="fa fa-4x fa-diamond text-primary mb-3 sr-icons"></i></a>
+              <a href="soccerMain?board_event=1"><i class="fa fa-4x fa-diamond text-primary mb-3 sr-icons"></i></a>
               <h3 class="mb-3">축구</h3>
               <p class="text-muted mb-0">Our templates are updated regularly so they don't break.</p>
             </div>

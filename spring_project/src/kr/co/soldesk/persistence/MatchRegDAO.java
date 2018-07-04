@@ -20,7 +20,7 @@ public class MatchRegDAO implements DAO {
 
 	@Override
 	public void insertOne(Object obj) {
-		ss.insert("insertOneMatch", (MatchRegDTO)obj);
+		ss.insert("insertMatchReg", (MatchRegDTO)obj);
 	}
 
 	@Override

@@ -7,11 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2>matchRegOk.jsp</h2>
-
-<h2>${teamInfoDTO.team_name }팀의<br>
-	${loginUser.user_name }님이 매칭을 등록하였습니다.</h2>
-
 
 </body>
 </html>

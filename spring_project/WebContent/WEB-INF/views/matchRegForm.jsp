@@ -11,7 +11,14 @@
 
 <form action="matchRegOk" method="post">
 	<table>
-	
+		<tr>
+			<td>user_num</td>
+			<th>
+				<input type="hidden" name="user_num" id="" value="${loginUser.user_num }" />
+				<!-- <input type="text" name="user_num" id="" /> -->
+			</th>
+		</tr>
+		
 		<tr>
 			<td>matchreg_stadium</td>
 			<th>
@@ -22,7 +29,14 @@
 		<tr>
 			<td>matchreg_event</td>
 			<th>
-				<input type="text" name="matchreg_event" id="" />
+				<!-- <input type="text" name="matchreg_event" id=""/> -->
+				<select name="m_select" id="m_select">
+					<option value="0" selected="selected">--선택--</option>
+					<option value="1">축구</option>
+					<option value="2">족구</option>
+					<option value="3">농구</option>
+					<option value="4">배구</option>
+				</select>
 			</th>
 		</tr>
 		

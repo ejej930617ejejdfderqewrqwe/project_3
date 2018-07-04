@@ -42,6 +42,10 @@
 		<property name="ss" ref="sqlSessionTemplate" />
 </bean>
 
+	<bean id="matchInfoDAO" class="kr.co.soldesk.persistence.MatchInfoDAO">
+		<property name="ss" ref="sqlSessionTemplate" />
+</bean>
+
 
 	
 	<!-- SqlSessionFactory -->
