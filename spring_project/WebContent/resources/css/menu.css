@@ -1,0 +1,200 @@
+﻿#container {
+      width: 100%;
+      margin: 0 auto;     /* 가로로 중앙에 배치 */
+      padding-top: 10%;   /* 테두리와 내용 사이의 패딩 여백 */
+      position: relative;
+    }
+    
+    #container-top{
+    	text-align: center;
+    	margin: 10px 0;
+    }
+    
+    
+    #paging{
+    	margin: 0 auto;
+    }
+    #table{
+    width: 100%;
+    margin: 0 auto;
+    }
+     
+    #section01{
+     position: absolute;
+     margin-top: 50px;
+     overflow: hidden;
+     line-height: 500px;
+    }
+    
+    
+    
+     #section02{
+     position: absolute;
+     margin-top: 20px;
+     overflow: hidden;
+    }
+    
+    
+    .list {
+      position: relative;
+      margin:0 auto;
+      max-width: 1100px;
+    }
+    
+	
+	.lt{
+	    position: relative; 
+    	float: left;
+   		 width: 49%;
+   		  height: 500px;
+   	}
+   	
+   	    .rt{
+	 position: relative; 
+    float: right;
+    width: 49%;
+    height: 500px;
+	}
+    
+    
+    #top ul{
+  	 background: black;
+   } 
+   
+   .nav-item{
+   float:  right;
+   margin-right:20px;
+   list-style-type: none;
+   
+   }
+  
+	img{
+	 
+	  width: 100%;
+	  height: 500px;
+	}
+	/*  .dropdown{
+	position: absolute;
+	display: inline-block;
+	}  */
+	
+     
+     /* Bootstrap 수정 */
+   /*  .table > thead {
+      background-color: #b3c6ff;
+    }
+    .table > thead > tr > th {
+      text-align: center;
+    }
+    .table-hover > tbody > tr:hover {
+      background-color: #e6ecff;
+    }
+    .table > tbody > tr > td {
+      text-align: center;
+    }
+    .table > tbody > tr > #title {
+      text-align: left;
+    } */ 
+     
+    div > #paging {
+      text-align: center;
+    }
+      
+    .hit {
+      animation-name: blink;
+      animation-duration: 1.5s;
+      animation-timing-function: ease;
+      animation-iteration-count: infinite;
+      /* 위 속성들을 한 줄로 표기하기 */
+      /* -webkit-animation: blink 1.5s ease infinite; */
+    }
+     
+    /* 애니메이션 지점 설정하기 */
+    /* 익스플로러 10 이상, 최신 모던 브라우저에서 지원 */
+    @keyframes blink {
+      from {color: white;}
+      30% {color: yellow;}
+      to {color: red; font-weight: bold;}
+      /* 0% {color:white;}
+      30% {color: yellow;}
+      100% {color:red; font-weight: bold;} */
+    }
+  
+	#b-list {
+     position: relative;
+   /*  top: 0; */
+    width: 100%;
+     background-color: rosybrown; 
+     
+	}
+	#boardlist{
+		text-align: center;
+		margin: 30px; auto;
+	}
+	
+
+	ul {
+	    /*목차 표시 없앰*/
+	    list-style: none;
+	   /*  overflow: hidden; */
+	    margin: 0;
+	    padding: 0;
+	    height: 40px;
+	    
+	}
+
+	ul li {    
+	    /*메뉴간 간격을 없앰*/
+	    float: left;
+	    margin-left: 30px;
+	   
+	}
+	
+	ul li a {   
+	    /*링크 밑줄 없앰*/
+	    text-decoration :none;
+	    /*height 조정가능하도록*/
+	    display: block;   
+	    padding: 10px 15px;
+	    line-height:  20px;  
+	    color: #ffffff; 
+	}
+	
+	/* 일반메뉴 hover */
+	ul li a:hover {   
+	     color: saddlebrown; 
+	     background-color: #ffffff;   
+	}
+	
+	
+	/* 서브메뉴 */
+	.dropdown-sub {
+	    display: none;
+	    position: relative;
+	    background-color: #ffffff; 
+	    box-shadow: 0px 10px 16px 0px rgba(0,0,0,0.2);
+	    overflow: hidden;
+	}
+	.dropdown-sub a{   
+	    font-size: 0.9rem;
+	    color: rosybrown;   
+	}
+	
+	/* dowpdown메뉴 hover */
+	.dropdown:hover .dropdown-sub{
+	    display: inline-block;
+	    position: absolute;
+	    margin-left:30px;
+	    overflow: hidden;
+	}
+	.dropdown:hover .dropbtn {
+	    color: saddlebrown;
+	    background-color: #ffffff;    
+	}
+	
+	
+	/* 서브메뉴 hover */
+	.dropdown-sub a:hover{
+	    color: #ffffff;;
+	    background-color: rosybrown; 
+	}
