@@ -20,8 +20,8 @@
 	String id = request.getParameter("userId");
 	%>
  
- 	<c:choose>
-    		<c:when test="${param.userId == null}"></c:when>
+ <%-- 	<c:choose>
+    		<c:when test="${param.userId == null}"></c:when> --%>
     <div id="top">
     	
       	 <ul>
@@ -37,12 +37,12 @@
             
          </ul>  
       </div> 
-         	<c:when test="${param.userId != null}"></c:when>
+         	<%-- <c:when test="${param.userId != null}"></c:when>
          	<div id="top">
          	<span><%=id %> 님 환영합니다.</span>
          </div>
          </c:choose>
-      
+       --%>
       <div id="img">
       	
       	<c:choose>
@@ -84,7 +84,7 @@
                <li class="dropdown">
                    <a href="#" class="dropbtn">경기장</a>
                    <div class="dropdown-sub">
-                       <a href="#">경기장안내</a>            
+                       <a href="stadiumList">경기장안내</a>            
                    </div>
                </li>
            </ul>

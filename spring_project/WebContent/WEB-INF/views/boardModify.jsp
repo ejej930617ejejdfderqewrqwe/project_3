@@ -96,7 +96,7 @@ table, th, tr, td{
                <li class="dropdown">
                    <a href="#" class="dropbtn">경기장</a>
                    <div class="dropdown-sub">
-                       <a href="#">경기장안내</a>            
+                                 <a href="stadiumList">경기장안내</a>    
                    </div>
                </li>
            </ul>
