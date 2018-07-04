@@ -96,13 +96,13 @@ table, th, tr, td{
                <li class="dropdown">
                    <a href="#" class="dropbtn">경기장</a>
                    <div class="dropdown-sub">
-                       <a href="#">경기장안내</a>            
+                                 <a href="stadiumList">경기장안내</a>    
                    </div>
                </li>
            </ul>
        </div> 
     
-      <div id="list">
+       <div id="boardlist">
 	     	
 	     <c:choose>
       	
@@ -126,6 +126,8 @@ table, th, tr, td{
 	  
 	  <form action="modifyOk">
 	  	<input type="hidden" name="board_num" value="${boardModify.board_num }" />
+	  	<input type="hidden" name="board_category" value="<%=category %>" />
+	  	<input type="hidden" name="board_event" value="<%=event %>" />
       <table>
      		 <tr>
 	            <th width="10%">작성자</th>

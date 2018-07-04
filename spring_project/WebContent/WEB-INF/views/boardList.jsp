@@ -26,6 +26,23 @@
     color: white;
 	}
 </style>	
+<script type="text/javascript">
+
+$(document).ready(function() {
+	
+	$("#title").on('click', function(){
+		if(confirm("삭제하시겠습니까?") == true){
+			document.frm.submit();
+		} else {
+			return;
+			
+		}
+		
+	});
+});
+
+
+</script>
   
 </head>
 <body>
@@ -46,7 +63,7 @@
               <a class="nav-link js-scroll-trigger" href="#services">로그인</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#portfolio">회원가입</a>
+              <a class="nav-link js-scroll-trigger" href="insert">회원가입</a>
             </li>
             
          </ul>  
@@ -82,27 +99,27 @@
                <li class="dropdown">
                    <a href="#" class="dropbtn">커뮤니티</a>
                    <div class="dropdown-sub">
-                  	  <div class="dropdown-sub">
+                  	 
                   	  
                   	   <a href="boardList?board_event=<%=event %>&board_category=1">공지사항</a>
                         <a href="boardList?board_event=<%=event %>&board_category=2">자유게시판</a>
                         <a href="boardList?board_event=<%=event %>&board_category=3">팀가입인사</a>
                         <a href="boardList?board_event=<%=event %>&board_category=4">팀모집게시판</a>
                    	</div>
-                   </div>
+                   
                   
                </li>
                <li class="dropdown">
                    <a href="#" class="dropbtn">경기장</a>
                    <div class="dropdown-sub">
-                       <a href="#">경기장안내</a>            
+                                  <a href="stadiumList">경기장안내</a>         
                    </div>
                </li>
            </ul>
        </div> 
  
 		
-	    <div id="list">
+	     <div id="boardlist">
 	     	
 	     <c:choose>
       	

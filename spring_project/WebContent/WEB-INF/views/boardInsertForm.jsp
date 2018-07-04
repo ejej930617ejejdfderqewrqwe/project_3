@@ -91,7 +91,7 @@
                <li class="dropdown">
                    <a href="#" class="dropbtn">경기장</a>
                    <div class="dropdown-sub">
-                       <a href="#">경기장안내</a>            
+                       <a href="stadiumList">경기장안내</a>         
                    </div>
                </li>
            </ul>
@@ -99,7 +99,7 @@
  
  
  
-	    <div id="list">
+	    <div id="boardlist">
 	     	
 	     <c:choose>
       	
@@ -182,7 +182,7 @@
                 <td colspan="2">
                     <input type="submit" value="등록"  class="pull-right" />
                     <input type="button" value="reset" class="pull-left"/>
-                    <input type="button" value="글 목록으로... " class="pull-right" onclick="javascript:location.href='boardList'"/>               
+                    <input type="button" value="목록"  class="mybtn" onclick="javascript:location.href='boardList?board_category=<%=category%>&board_event=<%=event%>'"/>
                 </td>
             </tr>
         </form>

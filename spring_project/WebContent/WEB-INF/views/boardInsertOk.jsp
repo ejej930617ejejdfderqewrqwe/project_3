@@ -10,14 +10,15 @@
 <script type="text/javascript">
 
 	<%
+	BoardDTO dto = new BoardDTO();
 	
-	int category = Integer.parseInt(request.getParameter("category"));
-	String event = request.getParameter("event");
+	int category = dto.getBoard_category();
+	String event = dto.getBoard_event();
 	%>
 	window.onload=function(){
 		setTimeout(function(){
 			
-			location.href="boardList?event="+<%=event %>+"&category="+<%=category %>;
+			location.href="boardList?board_event="+event+"&board_category="+category;
 		},1000);
 	}
 </script>

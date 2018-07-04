@@ -115,12 +115,7 @@ public class BoardControl {
 		
 			boardDAO.insertOne(boardDTO);
 			
-			BoardDTO dto = new BoardDTO();
-			String event = dto.getBoard_event();
-			int category = dto.getBoard_category();
-		
-			
-			return "boardList?board_category="+category+"&board_event="+event ;			
+			return "redirect:/boardList?board_category="+boardDTO.getBoard_category()+"&board_event="+boardDTO.getBoard_event();			
 			
 		}
 		
@@ -160,29 +155,17 @@ public class BoardControl {
 	public String ModifyOk(@ModelAttribute BoardDTO boardDTO,HttpServletResponse resp) throws IOException {
 	
 		
-		/*boardDAO.updateOne(boardDTO);*/	
+boardDAO.updateOne(boardDTO);	
 		
-		boardDAO.updateOne(boardDTO);	
+		return "redirect:/boardList?board_category="+boardDTO.getBoard_category()+"&board_event="+boardDTO.getBoard_event();			
 		
-		BoardDTO dto = new BoardDTO();
-		String event = dto.getBoard_event();
-		int category = dto.getBoard_category();
-				
-		
-		return "boardList?categoy="+category+"&event="+event;
-		
-				
-		
-		/*return "boardList?categoy="+category+"&event="+event;*/
-		
-		/*resp.sendRedirect("boardModifyOk");*/
 		
 		}
 	
 
 	
 
-	//게시물 삭제
+	/*//게시물 삭제
 	@RequestMapping("/deleteBoard")
 	public void delete(HttpServletRequest req,HttpServletResponse resp) throws IOException {
 		
@@ -191,7 +174,16 @@ public class BoardControl {
 		
 		resp.sendRedirect("boardList");
 
-	}
+	}*/
+	
+	@RequestMapping("/deleteOk")
+	public String delete(@ModelAttribute BoardDTO boardDTO) {
+			
+			boardDAO.deleteOne(boardDTO.getBoard_num());
+			
+			return "redirect:/boardList?board_category="+boardDTO.getBoard_category()+"&board_event="+boardDTO.getBoard_event();		
+			
+		}
 	
 	
 	
