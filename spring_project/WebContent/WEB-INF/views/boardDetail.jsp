@@ -14,10 +14,18 @@
 
 <script type="text/javascript">
 
+$(document).ready(function() {
 	
-
-
-
+	$("#deletebtn").on('click', function(){
+		if(confirm("삭제하시겠습니까?") == true){
+			document.frm.submit();
+		} else {
+			return;
+			
+		}
+		
+	});
+});
 
 </script>
 
@@ -61,7 +69,7 @@ table, th, tr, td{
               <a class="nav-link js-scroll-trigger" href="#services">로그인</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#portfolio">회원가입</a>
+              <a class="nav-link js-scroll-trigger" href="insert">회원가입</a>
             </li>
             
          </ul>  
@@ -113,7 +121,7 @@ table, th, tr, td{
        </div> 
      
        
-       <div id="list">
+       <div id="boardlist">
 	     	
 	     <c:choose>
       	
@@ -165,8 +173,14 @@ table, th, tr, td{
 				<td colspan="6">
 					<input type="button" value="목록"  class="mybtn" onclick="javascript:location.href='boardList?board_category=<%=category%>&board_event=<%=event%>'"/>
 					<input type="button" value="수정"  class="mybtn" onclick="javascript:location.href='boardModify?no=${boardDetail.board_num }&board_category=<%=category%>&board_event=<%=event%>'"/>
-					<input type="button" value="삭제"  class="mybtn" onclick="javascript:location.href='deleteBoard?no=${boardDetail.board_num }'"/>
 					
+					<input type="button"  value=삭제 id="deletebtn" class="mybtn"/>
+				<form action="deleteOk" name="frm">
+					<input type="hidden" name="board_category" value="<%=category %>" />
+					<input type="hidden" name="board_event" value="<%=event %>" />
+					<input type="hidden" name="board_num" value="${boardDetail.board_num }" />
+				
+				</form>
 				</td>
 			
 			</tr>

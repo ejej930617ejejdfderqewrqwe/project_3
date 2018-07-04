@@ -102,7 +102,7 @@ table, th, tr, td{
            </ul>
        </div> 
     
-      <div id="list">
+       <div id="boardlist">
 	     	
 	     <c:choose>
       	
@@ -126,6 +126,8 @@ table, th, tr, td{
 	  
 	  <form action="modifyOk">
 	  	<input type="hidden" name="board_num" value="${boardModify.board_num }" />
+	  	<input type="hidden" name="board_category" value="<%=category %>" />
+	  	<input type="hidden" name="board_event" value="<%=event %>" />
       <table>
      		 <tr>
 	            <th width="10%">작성자</th>

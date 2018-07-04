@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,10 +17,13 @@
 	<%
 	
 	String event = request.getParameter("board_event");
-	
+	String id = request.getParameter("userId");
 	%>
  
+ 	<c:choose>
+    		<c:when test="${param.userId == null}"></c:when>
     <div id="top">
+    	
       	 <ul>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#about">홈</a>
@@ -29,11 +32,16 @@
               <a class="nav-link js-scroll-trigger" href="#services">로그인</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#portfolio">회원가입</a>
+              <a class="nav-link js-scroll-trigger" href="insert">회원가입</a>
             </li>
             
          </ul>  
-      </div>
+      </div> 
+         	<c:when test="${param.userId != null}"></c:when>
+         	<div id="top">
+         	<span><%=id %> 님 환영합니다.</span>
+         </div>
+         </c:choose>
       
       <div id="img">
       	
